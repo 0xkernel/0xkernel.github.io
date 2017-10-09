@@ -37,8 +37,6 @@
     
     <title>
         
-            分类: 面试 | 
-        
         0xkernel
     </title>
 
@@ -231,15 +229,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.0xkernel.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 面试 | 0xkernel">
+    <meta property="og:title" content="0xkernel">
     <meta property="og:image" content="http://www.0xkernel.com/img/favicon.png" />
     <meta property="og:description" content="Linux、C/C++、Kernel、Computer science">
     
 
     
+        <meta property="article:published_time" content="Mon Oct 09 2017 18:48:39 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Oct 09 2017 18:48:27 GMT+0800" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: 面试 | 0xkernel">
+    <meta name="twitter:title" content="0xkernel">
     <meta name="twitter:description" content="Linux、C/C++、Kernel、Computer science">
     <meta name="twitter:image" content="http://www.0xkernel.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -247,13 +248,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.0xkernel.com/categories/面试/index.html" />
+        <link rel="canonical" href="http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/index.html",
+    "headline": "",
+    "datePublished": "Mon Oct 09 2017 18:48:39 GMT+0800",
+    "dateModified": "Mon Oct 09 2017 18:48:27 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "0xkernel",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/myAvatar.jpg"
+        },
+        "description": "吾尝终日而思矣,不如须臾之所学也."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "0xkernel",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "Linux、C/C++、Kernel、Computer science",
+    "description": "Linux、C/C++、Kernel、Computer science",
+}
+</script>
 
 
     
@@ -295,98 +326,264 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#为什么要写"><span class="post-toc-number">1.</span> <span class="post-toc-text">为什么要写</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Distributed-System-introduction-chapter-1"><span class="post-toc-number">2.</span> <span class="post-toc-text">Distributed System - introduction(chapter 1)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DEFINITION-OF-A-DISTRIBUTED-SYSTEM"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">DEFINITION OF A DISTRIBUTED SYSTEM</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CHARACTERISTICS-OF-DISTRIBUTED-SYSTEMS"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">CHARACTERISTICS OF DISTRIBUTED SYSTEMS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GOALS"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">GOALS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Making-Resource-Accessible"><span class="post-toc-number">2.0.3.0.1.</span> <span class="post-toc-text">Making Resource Accessible</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Distrbuted-Transparency"><span class="post-toc-number">2.0.3.0.2.</span> <span class="post-toc-text">Distrbuted Transparency</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Openness"><span class="post-toc-number">2.0.3.0.3.</span> <span class="post-toc-text">Openness</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Scalability"><span class="post-toc-number">2.0.3.0.4.</span> <span class="post-toc-text">Scalability</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TYPES-OF-DISTRIBUTED-SYSTEM"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">TYPES OF DISTRIBUTED SYSTEM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Distributed-Computing-Systems"><span class="post-toc-number">2.0.4.0.1.</span> <span class="post-toc-text">Distributed Computing Systems</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Distributed-Information-Systems"><span class="post-toc-number">2.0.4.0.2.</span> <span class="post-toc-text">Distributed Information Systems</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/29/风际游戏-服务端开发面试/">风际游戏-服务端面试</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言&ensp;&...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/29/风际游戏-服务端开发面试/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/myAvatar.jpg" width="44px" height="44px" alt="0xkernel's avatar">
-            </div>
-            <div>
-                <strong>0xkernel</strong>
-                <span>9月 29, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/面试/">面试</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/myAvatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>0xkernel</strong>
+        <span>10月 09, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/index.html&pic=http://www.0xkernel.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/index.html&via=0xkernel" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="为什么要写"><a href="#为什么要写" class="headerlink" title="为什么要写"></a>为什么要写</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;因为好记心不如烂笔头，所以将学习《分布式系统原理与范型》-特南鲍姆，一些重要概念与知识写下来，方便下次好复习与查看。</p>
+<h1 id="Distributed-System-introduction-chapter-1"><a href="#Distributed-System-introduction-chapter-1" class="headerlink" title="Distributed System - introduction(chapter 1)"></a>Distributed System - introduction(chapter 1)</h1><h3 id="DEFINITION-OF-A-DISTRIBUTED-SYSTEM"><a href="#DEFINITION-OF-A-DISTRIBUTED-SYSTEM" class="headerlink" title="DEFINITION OF A DISTRIBUTED SYSTEM"></a>DEFINITION OF A DISTRIBUTED SYSTEM</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;A distributed system is a collection of independent computers that appears to its users as a single coherent system。<br>&nbsp;&nbsp;&nbsp;&nbsp;This definiton has serveral important aspects,The first one is that a distributed system consists of components that are autonomous.A second aspect is that users think they are dealing with a single system.</p>
+<h3 id="CHARACTERISTICS-OF-DISTRIBUTED-SYSTEMS"><a href="#CHARACTERISTICS-OF-DISTRIBUTED-SYSTEMS" class="headerlink" title="CHARACTERISTICS OF DISTRIBUTED SYSTEMS"></a>CHARACTERISTICS OF DISTRIBUTED SYSTEMS</h3><ul>
+<li>Differences between the various computers and the ways in which they communicate are mostly hidden from users.</li>
+<li>Users and applications can interact with a distrbuted system in a consistent and uniform way,regardless of where and when interaction takes place</li>
+<li>Easy to expand or scale</li>
+</ul>
+<p><em>Distrbuted system is sometimes called middleware</em></p>
+<h3 id="GOALS"><a href="#GOALS" class="headerlink" title="GOALS"></a>GOALS</h3><h5 id="Making-Resource-Accessible"><a href="#Making-Resource-Accessible" class="headerlink" title="Making Resource Accessible"></a>Making Resource Accessible</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;The main goal of a distributed system is to make it easy for the users to access remote resources,and to share them in a controlled and efficient way.</p>
+<h5 id="Distrbuted-Transparency"><a href="#Distrbuted-Transparency" class="headerlink" title="Distrbuted Transparency"></a>Distrbuted Transparency</h5><ul>
+<li>Access Transparency</li>
+<li>Location Transparency</li>
+<li>Migration Transparency</li>
+<li>Relocation Transparency</li>
+<li>Replication Transparency</li>
+<li>Concurrency Transparency</li>
+<li>Failure Transparency</li>
+</ul>
+<h5 id="Openness"><a href="#Openness" class="headerlink" title="Openness"></a>Openness</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;Another important goal of distributed systems is openness. An open distributed system is a system that offers services according to standard rules that describe the syntax and semantics of those services.</p>
+<h5 id="Scalability"><a href="#Scalability" class="headerlink" title="Scalability"></a>Scalability</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;Scalability of a system can be measured along at least three different dimensions (Neuman, 1994). First, a system can be scalable with respect to its size,meaning that we can easily add more users and resources to the system. Second, a geographically scalable system is one in which the users and resources may lie far apart. Third, a system can be administratively scalable,/~~aning that it can still be easy to manage even if it spans many independent administrative organizations.<br><em>There are now basically only three techniques for scaling : hiding communication latencies,distribution,and replication</em></p>
+<h3 id="TYPES-OF-DISTRIBUTED-SYSTEM"><a href="#TYPES-OF-DISTRIBUTED-SYSTEM" class="headerlink" title="TYPES OF DISTRIBUTED SYSTEM"></a>TYPES OF DISTRIBUTED SYSTEM</h3><h5 id="Distributed-Computing-Systems"><a href="#Distributed-Computing-Systems" class="headerlink" title="Distributed Computing Systems"></a>Distributed Computing Systems</h5><ul>
+<li>Cluster Computing Systems</li>
+<li>Grid Computing Systems</li>
+</ul>
+<h5 id="Distributed-Information-Systems"><a href="#Distributed-Information-Systems" class="headerlink" title="Distributed Information Systems"></a>Distributed Information Systems</h5><ul>
+<li>Transaction Processing Systems</li>
+<li>Enterprise Application Intergration</li>
+</ul>
+
+        
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//0xkernel.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/09/29/风际游戏-服务端开发面试/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -484,7 +681,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Distributed-System/">Distributed System<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试/">面试<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/面试/">面试<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
