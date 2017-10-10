@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Tue Oct 10 2017 23:57:49 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Oct 10 2017 23:59:39 GMT+0800" />
+        <meta property="article:modified_time" content="Wed Oct 11 2017 00:09:48 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://www.0xkernel.com/2017/10/10/Linux-2-6-24内核编译中遇到的坑/index.html",
     "headline": "Linux 2.6.24内核编译中遇到的坑",
     "datePublished": "Tue Oct 10 2017 23:57:49 GMT+0800",
-    "dateModified": "Tue Oct 10 2017 23:59:39 GMT+0800",
+    "dateModified": "Wed Oct 11 2017 00:09:48 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "0xkernel",
@@ -499,8 +499,8 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&ensp;&ensp;&ensp;&ensp;记录我在64位Linux Mint 18.2 Sonya下编译2.6.24内核时遇到的一些坑。系统信息如下：<br><img src="Linux 2.6.24内核编译中遇到的坑/SystemInfo.png" alt=""></p>
-<h1 id="坑坑坑"><a href="#坑坑坑" class="headerlink" title="坑坑坑"></a>坑坑坑</h1><p>&ensp;&ensp;&ensp;&ensp;由于系统自带的gcc与make版本过高（分别位5.4.0和4.1.0），用高版本gcc与make编译内核时，会出现一些错误，所以我们需要降低gcc与make的版本（推荐gcc为4.4,make为3.8）。因为Mint是debian系的，所以我们就直接从debian 软件包网站那里下载低版本，地址为：<a href="https://packages.debian.org/search?keywords=gcc-4.4" target="_blank" rel="external">https://packages.debian.org/search?keywords=gcc-4.4</a> ，分别搜索下载：<br><img src="Linux 2.6.24内核编译中遇到的坑/package.png" alt=""><br>然后进行安装。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&ensp;&ensp;&ensp;&ensp;记录我在64位Linux Mint 18.2 Sonya下编译2.6.24内核时遇到的一些坑。系统信息如下：<br><img src="/img/Linux 2.6.24内核编译中遇到的坑/SystemInfo.png" alt=""></p>
+<h1 id="坑坑坑"><a href="#坑坑坑" class="headerlink" title="坑坑坑"></a>坑坑坑</h1><p>&ensp;&ensp;&ensp;&ensp;由于系统自带的gcc与make版本过高（分别位5.4.0和4.1.0），用高版本gcc与make编译内核时，会出现一些错误，所以我们需要降低gcc与make的版本（推荐gcc为4.4,make为3.8）。因为Mint是debian系的，所以我们就直接从debian 软件包网站那里下载低版本，地址为：<a href="https://packages.debian.org/search?keywords=gcc-4.4" target="_blank" rel="external">https://packages.debian.org/search?keywords=gcc-4.4</a> ，分别搜索下载：<br><img src="/img/Linux 2.6.24内核编译中遇到的坑/package.png" alt=""><br>然后进行安装。</p>
 <h1 id="编译32位内核"><a href="#编译32位内核" class="headerlink" title="编译32位内核"></a>编译32位内核</h1><p>&ensp;&ensp;&ensp;&ensp;如果配置内核时，需要使用 make menuconfig,还需要下载相应的支持库：<br><code>sudo apt-get install libncurses5-dev libncursesw5-dev</code><br>&ensp;&ensp;&ensp;&ensp;安装好了就可以make menuconfig了。<br>&ensp;&ensp;&ensp;&ensp;由于我想研究的是32位的内核，所以在编译与配置的时候，需要加相应体系结构的参数（ARCH=xxx,xxx为你希望的体系结构），如果不加的话，会根据你本地体系结构来生成相应的内核，如我使用的是x86_64,我不加相应参数，编译出来的内核也会是x86_64的。<br>&ensp;&ensp;&ensp;&ensp;编译生成x86_32位内核的方法如下：</p>
 <ol>
 <li>make ARCH=i386 defconfig (使用默认配置，配置内核)</li>
