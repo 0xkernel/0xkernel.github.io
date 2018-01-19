@@ -37,7 +37,7 @@
     
     <title>
         
-            Linux 2.6.24内核编译中遇到的坑 | 
+            Intel CPU 漏洞分析 | 
         
         0xkernel
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="0xkernel">
     <meta name="description" itemprop="description" content="Computer science、Reverse engineering">
-    <meta name="keywords" content="Computer science、Reverse engineering,Linux kernel">
+    <meta name="keywords" content="Computer science、Reverse engineering,系统漏洞">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.0xkernel.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Linux 2.6.24内核编译中遇到的坑 | 0xkernel">
+    <meta property="og:title" content="Intel CPU 漏洞分析 | 0xkernel">
     <meta property="og:image" content="http://www.0xkernel.com/img/favicon.png" />
     <meta property="og:description" content="Computer science、Reverse engineering">
-    <meta property="og:article:tag" content="Linux kernel"> 
+    <meta property="og:article:tag" content="系统漏洞"> 
 
     
-        <meta property="article:published_time" content="Tue Oct 10 2017 23:57:49 GMT+0800" />
-        <meta property="article:modified_time" content="Wed Oct 11 2017 00:14:47 GMT+0800" />
+        <meta property="article:published_time" content="Fri Jan 19 2018 17:19:15 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Jan 19 2018 17:30:45 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Linux 2.6.24内核编译中遇到的坑 | 0xkernel">
+    <meta name="twitter:title" content="Intel CPU 漏洞分析 | 0xkernel">
     <meta name="twitter:description" content="Computer science、Reverse engineering">
     <meta name="twitter:image" content="http://www.0xkernel.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.0xkernel.com/2017/10/10/Linux-2-6-24内核编译中遇到的坑/index.html" />
+        <link rel="canonical" href="http://www.0xkernel.com/2018/01/19/Intel-CPU-漏洞分析/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://www.0xkernel.com/2017/10/10/Linux-2-6-24内核编译中遇到的坑/index.html",
-    "headline": "Linux 2.6.24内核编译中遇到的坑",
-    "datePublished": "Tue Oct 10 2017 23:57:49 GMT+0800",
-    "dateModified": "Wed Oct 11 2017 00:14:47 GMT+0800",
+    "mainEntityOfPage": "http://www.0xkernel.com/2018/01/19/Intel-CPU-漏洞分析/index.html",
+    "headline": "Intel CPU 漏洞分析",
+    "datePublished": "Fri Jan 19 2018 17:19:15 GMT+0800",
+    "dateModified": "Fri Jan 19 2018 17:30:45 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "0xkernel",
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Linux kernelComputer science、Reverse engineering",
+    "keywords": ",系统漏洞Computer science、Reverse engineering",
     "description": "Computer science、Reverse engineering",
 }
 </script>
@@ -357,7 +357,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#坑坑坑"><span class="post-toc-number">2.</span> <span class="post-toc-text">坑坑坑</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#编译32位内核"><span class="post-toc-number">3.</span> <span class="post-toc-text">编译32位内核</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#编译时遇到的坑"><span class="post-toc-number">4.</span> <span class="post-toc-text">编译时遇到的坑</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Intel-CPU漏洞分析报告"><span class="post-toc-number">1.</span> <span class="post-toc-text">Intel CPU漏洞分析报告</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#预备知识"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">预备知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#存储分级"><span class="post-toc-number">1.0.1.0.0.1.</span> <span class="post-toc-text">存储分级</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#分支预测"><span class="post-toc-number">1.0.1.0.0.2.</span> <span class="post-toc-text">分支预测</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#乱序执行"><span class="post-toc-number">1.0.1.0.0.3.</span> <span class="post-toc-text">乱序执行</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#漏洞证明"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">漏洞证明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#“不应该执行成功的指令”-执行-–-利用乱序执行"><span class="post-toc-number">1.0.2.0.1.</span> <span class="post-toc-text">“不应该执行成功的指令” 执行 – 利用乱序执行</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#“永远不会执行的指令”-执行-–-利用分支预测"><span class="post-toc-number">1.0.2.0.2.</span> <span class="post-toc-text">“永远不会执行的指令” 执行   – 利用分支预测</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#两种方法的比较"><span class="post-toc-number">1.0.2.0.3.</span> <span class="post-toc-text">两种方法的比较</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安全建议"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">安全建议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#参考质料"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">参考质料</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -389,7 +389,7 @@
         
     
             <p class="article-headline-p">
-                Linux 2.6.24内核编译中遇到的坑
+                Intel CPU 漏洞分析
             </p>
         </div>
 
@@ -408,7 +408,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>0xkernel</strong>
-        <span>10月 10, 2017</span>
+        <span>1月 19, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -432,7 +432,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Linux-kernel/">Linux kernel</a>
+        <a class="post_tag-link" href="/tags/系统漏洞/">系统漏洞</a>
     </ul>
     
 
@@ -448,7 +448,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Linux 2.6.24内核编译中遇到的坑&url=http://www.0xkernel.com/2017/10/10/Linux-2-6-24内核编译中遇到的坑/index.html&pic=http://www.0xkernel.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Intel CPU 漏洞分析&url=http://www.0xkernel.com/2018/01/19/Intel-CPU-漏洞分析/index.html&pic=http://www.0xkernel.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -457,7 +457,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Linux 2.6.24内核编译中遇到的坑&url=http://www.0xkernel.com/2017/10/10/Linux-2-6-24内核编译中遇到的坑/index.html&via=0xkernel" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Intel CPU 漏洞分析&url=http://www.0xkernel.com/2018/01/19/Intel-CPU-漏洞分析/index.html&via=0xkernel" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -466,7 +466,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.0xkernel.com/2017/10/10/Linux-2-6-24内核编译中遇到的坑/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.0xkernel.com/2018/01/19/Intel-CPU-漏洞分析/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -475,7 +475,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.0xkernel.com/2017/10/10/Linux-2-6-24内核编译中遇到的坑/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.0xkernel.com/2018/01/19/Intel-CPU-漏洞分析/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -499,15 +499,32 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&ensp;&ensp;&ensp;&ensp;记录我在64位Linux Mint 18.2 Sonya下编译2.6.24内核时遇到的一些坑。系统信息如下：<br><img src="SystemInfo.png" alt=""></p>
-<h1 id="坑坑坑"><a href="#坑坑坑" class="headerlink" title="坑坑坑"></a>坑坑坑</h1><p>&ensp;&ensp;&ensp;&ensp;由于系统自带的gcc与make版本过高（分别位5.4.0和4.1.0），用高版本gcc与make编译内核时，会出现一些错误，所以我们需要降低gcc与make的版本（推荐gcc为4.4,make为3.8）。因为Mint是debian系的，所以我们就直接从debian 软件包网站那里下载低版本，地址为：<a href="https://packages.debian.org/search?keywords=gcc-4.4" target="_blank" rel="external">https://packages.debian.org/search?keywords=gcc-4.4</a> ，分别搜索下载：<br><img src="package.png" alt=""><br>然后进行安装。</p>
-<h1 id="编译32位内核"><a href="#编译32位内核" class="headerlink" title="编译32位内核"></a>编译32位内核</h1><p>&ensp;&ensp;&ensp;&ensp;如果配置内核时，需要使用 make menuconfig,还需要下载相应的支持库：<br><code>sudo apt-get install libncurses5-dev libncursesw5-dev</code><br>&ensp;&ensp;&ensp;&ensp;安装好了就可以make menuconfig了。<br>&ensp;&ensp;&ensp;&ensp;由于我想研究的是32位的内核，所以在编译与配置的时候，需要加相应体系结构的参数（ARCH=xxx,xxx为你希望的体系结构），如果不加的话，会根据你本地体系结构来生成相应的内核，如我使用的是x86_64,我不加相应参数，编译出来的内核也会是x86_64的。<br>&ensp;&ensp;&ensp;&ensp;编译生成x86_32位内核的方法如下：</p>
-<ol>
-<li>make ARCH=i386 defconfig (使用默认配置，配置内核)</li>
-<li>make ARCH=i386 (编译生成内核)</li>
+        <h1 id="Intel-CPU漏洞分析报告"><a href="#Intel-CPU漏洞分析报告" class="headerlink" title="Intel CPU漏洞分析报告"></a>Intel CPU漏洞分析报告</h1><h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><h6 id="存储分级"><a href="#存储分级" class="headerlink" title="存储分级"></a>存储分级</h6><p>由于计算机存储分级的特性（第一级：寄存器，第二级：高速缓存，第三级：内存，第四级：磁盘），每一级之间的访问速度差距高达数量级。所以处理器会将用到的数据和指令加载进高速缓存(现代CPU分指令高速缓存与数据高速缓存)，以提高计算机的执行速度。其加载数据或指令进高速缓存的原则是(空间局部性、时间局部性):</p>
+<pre><code>1. 时间局部性：如果一个数据被访问，那么在近期它很可能还会被再次访问。
+2. 空间局部性: 与当前访问的数据紧挨着的数据，近期将会被访问
+</code></pre><h6 id="分支预测"><a href="#分支预测" class="headerlink" title="分支预测"></a>分支预测</h6><p>分支预测分为动态分支预测与静态分支预测。其效果就是预测跳转地址，让CPU去执行该地址的指令,不用让CPU等待判断结果，进而提高程序速度。若预测错误，CPU也会保证预测执行不会造成影响.</p>
+<pre><code>静态分支预测：每次假设都跳转或都不跳转
+动态分支预测：会根据以往的跳转结果来判断本次是否跳转
+</code></pre><h6 id="乱序执行"><a href="#乱序执行" class="headerlink" title="乱序执行"></a>乱序执行</h6><p>是指CPU不会严格按照指令的排列顺序执行（无依赖性），但是会保证其执行结果与按照顺序执行的结果一样。如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mov eax,1</div><div class="line">mov ebx,1</div></pre></td></tr></table></figure></p>
+<p>其之间没有依赖关系，采用乱序执行可以提高执行速度。</p>
+<h3 id="漏洞证明"><a href="#漏洞证明" class="headerlink" title="漏洞证明"></a>漏洞证明</h3><p>漏洞利用方法:首先我们创建一个数组（我创建的数组一项大小是一个页面，一共256项），然后清空该数组的缓存，通过利用不应该执行成功的指令(或永远不会执行的指令)，获得对应地址的值，利用该值来访问我们数组中的某一项，将该项加入进缓存。然后通过测试我们创建的数组中每一项的访问时间，且由于被加载进缓存的访问速度最小，则我们可以获得该项的下标。然后得出对应地址的值。</p>
+<p>可以看出漏洞利用的关键就是：如何让 “不应该执行成功的指令” 或 “永远不会执行的指令” 执行</p>
+<h5 id="“不应该执行成功的指令”-执行-–-利用乱序执行"><a href="#“不应该执行成功的指令”-执行-–-利用乱序执行" class="headerlink" title="“不应该执行成功的指令” 执行 – 利用乱序执行"></a>“不应该执行成功的指令” 执行 – 利用乱序执行</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">add rax,0x100</div><div class="line">add rax,0x100</div><div class="line">add rax,0x100</div><div class="line">add rax,0x100</div><div class="line">add rax,0x100</div><div class="line">add rax,0x100</div><div class="line">add rax,0x100</div><div class="line">add rax,0x100</div><div class="line">add rax,0x100</div><div class="line">add rax,0x100</div><div class="line">mov al,byte [kernelAddress]</div><div class="line">shl rax,0xc</div><div class="line">mov rbx,dword [target_arr + rax]</div></pre></td></tr></table></figure>
+<p>以上就是实现漏洞利用的最基本代码。1.获取内核数据，2.利用该值将用户空间创建的数组对应项加载进高速缓存，进而获得内核空间的数据。在我们分析看来，2步骤根本就不会执行，因为在第一步，用户进程试图访问内核空间，造成程序异常，从而退出程序。但是由于乱序执行的特性且为了高效性，权限检查会放在指令执行的最后，其会将我们的数组项加载进缓存，进而获得内核数据.</p>
+<h5 id="“永远不会执行的指令”-执行-–-利用分支预测"><a href="#“永远不会执行的指令”-执行-–-利用分支预测" class="headerlink" title="“永远不会执行的指令” 执行   – 利用分支预测"></a>“永远不会执行的指令” 执行   – 利用分支预测</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">exposeValue</span><span class="params">(<span class="keyword">void</span> *addr)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> len = (<span class="keyword">unsigned</span> <span class="keyword">long</span>)addr;</div><div class="line">    <span class="keyword">int</span> idx = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> value = <span class="number">0</span>;</div><div class="line"></div><div class="line">    clflushMyArr();</div><div class="line">    </div><div class="line">    <span class="keyword">if</span>( likely( len&lt; pMyArr-&gt;len) )&#123;  <span class="comment">//永远为假</span></div><div class="line">        <span class="comment">//never arrive</span></div><div class="line">        idx = *((<span class="keyword">char</span>*)addr);</div><div class="line">        value = target_buf[idx*PAGE_SIZE];</div><div class="line">    &#125;   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>首先我们将pMyArr-&gt;len从缓存中清空,则在判断结果的时候需要一定的时间，这时分支预测判断为真，就会将我们的数组对应项加载进高速缓存。</p>
+<p>这段代码只考虑的静态分支预测，没有考虑动态分支预测，所以在实际中我们为了让预测结果为真需要对CPU进行训练。</p>
+<h5 id="两种方法的比较"><a href="#两种方法的比较" class="headerlink" title="两种方法的比较"></a>两种方法的比较</h5><p>由于利用分支预测，需要对CPU进行训练，所以其运行速度相比利用乱序执行慢。<br>但是乱序执行中需要对非法内存访问进行特殊处理，实现相对利用分支预测麻烦。</p>
+<h3 id="安全建议"><a href="#安全建议" class="headerlink" title="安全建议"></a>安全建议</h3><p>及时更新系统与浏览器,安装防护软件</p>
+<h3 id="参考质料"><a href="#参考质料" class="headerlink" title="参考质料"></a>参考质料</h3><ol>
+<li><a href="https://cyber.wtf/2017/07/28/negative-result-reading-kernel-memory-from-user-mode/" target="_blank" rel="external">https://cyber.wtf/2017/07/28/negative-result-reading-kernel-memory-from-user-mode/</a></li>
+<li><a href="https://googleprojectzero.blogspot.com.es/2018/01/reading-privileged-memory-with-side.html" target="_blank" rel="external">https://googleprojectzero.blogspot.com.es/2018/01/reading-privileged-memory-with-side.html</a></li>
+<li><a href="http://0xffffff.org/2015/12/06/37-How-to-benchmark-code-execution-times/" target="_blank" rel="external">http://0xffffff.org/2015/12/06/37-How-to-benchmark-code-execution-times/</a></li>
+<li><a href="https://weibo.com/ttarticle/p/show?id=2309404192549521743410" target="_blank" rel="external">https://weibo.com/ttarticle/p/show?id=2309404192549521743410</a></li>
+<li><a href="https://weibo.com/ttarticle/p/show?id=2309404192925885035405" target="_blank" rel="external">https://weibo.com/ttarticle/p/show?id=2309404192925885035405</a></li>
+<li><a href="https://software.intel.com/en-us/articles/branch-and-loop-reorganization-to-prevent-mispredicts" target="_blank" rel="external">https://software.intel.com/en-us/articles/branch-and-loop-reorganization-to-prevent-mispredicts</a></li>
+<li>《计算机组成:结构化方法》(塔嫩鲍姆 (Andrew S. Tanenbaum) )</li>
 </ol>
-<h1 id="编译时遇到的坑"><a href="#编译时遇到的坑" class="headerlink" title="编译时遇到的坑"></a>编译时遇到的坑</h1><p>arch/x86/boot/boot.h: Assembler messages:<br>arch/x86/boot/boot.h:112: 错误： bad register name `%dil’<br>make[1]: <strong><em> [arch/x86/boot/video.o] 错误 1<br>make: </em></strong> [bzImage] 错误 2</p>
-<p>解决办法：将arch/x86/boot/boot.h的第112行中的=r换成=q。<br>其他的一些问题，通过google可以解决，这里就不在记录</p>
 
         
     
@@ -526,8 +543,8 @@
     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://www.0xkernel.com/2017/10/10/Linux-2-6-24内核编译中遇到的坑/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://www.0xkernel.com/2017/10/10/Linux-2-6-24内核编译中遇到的坑/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://www.0xkernel.com/2018/01/19/Intel-CPU-漏洞分析/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://www.0xkernel.com/2018/01/19/Intel-CPU-漏洞分析/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 <script type="text/ls-javascript" id="disqus-thread-script">
@@ -557,21 +574,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/11/17/Web安全入门/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/10/09/Distributed-System-Intruduction/" id="post_nav-older" class="next-content">
+        <a href="/2018/01/19/Linux常见漏洞成因分析与利用/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

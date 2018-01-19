@@ -37,6 +37,8 @@
     
     <title>
         
+            标签: 系统漏洞 | 
+        
         0xkernel
     </title>
 
@@ -46,8 +48,8 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="0xkernel">
-    <meta name="description" itemprop="description" content="Linux、C/C++、Kernel、Computer science">
-    <meta name="keywords" content="Linux、C/C++、Kernel、Computer science">
+    <meta name="description" itemprop="description" content="Computer science、Reverse engineering">
+    <meta name="keywords" content="Computer science、Reverse engineering">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -229,62 +231,29 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.0xkernel.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="0xkernel">
+    <meta property="og:title" content="标签: 系统漏洞 | 0xkernel">
     <meta property="og:image" content="http://www.0xkernel.com/img/favicon.png" />
-    <meta property="og:description" content="Linux、C/C++、Kernel、Computer science">
+    <meta property="og:description" content="Computer science、Reverse engineering">
     
 
-    
-        <meta property="article:published_time" content="Mon Oct 09 2017 18:48:39 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Oct 09 2017 18:48:27 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="0xkernel">
-    <meta name="twitter:description" content="Linux、C/C++、Kernel、Computer science">
+    <meta name="twitter:title" content="标签: 系统漏洞 | 0xkernel">
+    <meta name="twitter:description" content="Computer science、Reverse engineering">
     <meta name="twitter:image" content="http://www.0xkernel.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://www.0xkernel.com" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/index.html" />
+        <link rel="canonical" href="http://www.0xkernel.com/tags/系统漏洞/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": "http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/index.html",
-    "headline": "",
-    "datePublished": "Mon Oct 09 2017 18:48:39 GMT+0800",
-    "dateModified": "Mon Oct 09 2017 18:48:27 GMT+0800",
-    "author": {
-        "@type": "Person",
-        "name": "0xkernel",
-        "image": {
-            "@type": "ImageObject",
-            "url": "/img/myAvatar.jpg"
-        },
-        "description": "吾尝终日而思矣,不如须臾之所学也."
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "0xkernel",
-        "logo": {
-            "@type":"ImageObject",
-            "url": "/img/favicon.png"
-        }
-    },
-    "keywords": "Linux、C/C++、Kernel、Computer science",
-    "description": "Linux、C/C++、Kernel、Computer science",
-}
-</script>
 
 
     
@@ -326,264 +295,93 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+    <div class="locate-thumbnail-symbol"></div>
 
-
-    <!-- Left aligned menu below button -->
-    
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#为什么要写"><span class="post-toc-number">1.</span> <span class="post-toc-text">为什么要写</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Distributed-System-introduction-chapter-1"><span class="post-toc-number">2.</span> <span class="post-toc-text">Distributed System - introduction(chapter 1)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DEFINITION-OF-A-DISTRIBUTED-SYSTEM"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">DEFINITION OF A DISTRIBUTED SYSTEM</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CHARACTERISTICS-OF-DISTRIBUTED-SYSTEMS"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">CHARACTERISTICS OF DISTRIBUTED SYSTEMS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GOALS"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">GOALS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Making-Resource-Accessible"><span class="post-toc-number">2.0.3.0.1.</span> <span class="post-toc-text">Making Resource Accessible</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Distrbuted-Transparency"><span class="post-toc-number">2.0.3.0.2.</span> <span class="post-toc-text">Distrbuted Transparency</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Openness"><span class="post-toc-number">2.0.3.0.3.</span> <span class="post-toc-text">Openness</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Scalability"><span class="post-toc-number">2.0.3.0.4.</span> <span class="post-toc-text">Scalability</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TYPES-OF-DISTRIBUTED-SYSTEM"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">TYPES OF DISTRIBUTED SYSTEM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Distributed-Computing-Systems"><span class="post-toc-number">2.0.4.0.1.</span> <span class="post-toc-text">Distributed Computing Systems</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Distributed-Information-Systems"><span class="post-toc-number">2.0.4.0.2.</span> <span class="post-toc-text">Distributed Information Systems</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
-    </ul>
+    <!-- Pin on top -->
     
 
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
-        
-    
-            <p class="article-headline-p">
-                
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/myAvatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>0xkernel</strong>
-        <span>10月 09, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/index.html&pic=http://www.0xkernel.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/index.html&via=0xkernel" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <h1 id="为什么要写"><a href="#为什么要写" class="headerlink" title="为什么要写"></a>为什么要写</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;因为好记心不如烂笔头，所以将学习《分布式系统原理与范型》-特南鲍姆，一些重要概念与知识写下来，方便下次好复习与查看。</p>
-<h1 id="Distributed-System-introduction-chapter-1"><a href="#Distributed-System-introduction-chapter-1" class="headerlink" title="Distributed System - introduction(chapter 1)"></a>Distributed System - introduction(chapter 1)</h1><h3 id="DEFINITION-OF-A-DISTRIBUTED-SYSTEM"><a href="#DEFINITION-OF-A-DISTRIBUTED-SYSTEM" class="headerlink" title="DEFINITION OF A DISTRIBUTED SYSTEM"></a>DEFINITION OF A DISTRIBUTED SYSTEM</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;A distributed system is a collection of independent computers that appears to its users as a single coherent system。<br>&nbsp;&nbsp;&nbsp;&nbsp;This definiton has serveral important aspects,The first one is that a distributed system consists of components that are autonomous.A second aspect is that users think they are dealing with a single system.</p>
-<h3 id="CHARACTERISTICS-OF-DISTRIBUTED-SYSTEMS"><a href="#CHARACTERISTICS-OF-DISTRIBUTED-SYSTEMS" class="headerlink" title="CHARACTERISTICS OF DISTRIBUTED SYSTEMS"></a>CHARACTERISTICS OF DISTRIBUTED SYSTEMS</h3><ul>
-<li>Differences between the various computers and the ways in which they communicate are mostly hidden from users.</li>
-<li>Users and applications can interact with a distrbuted system in a consistent and uniform way,regardless of where and when interaction takes place</li>
-<li>Easy to expand or scale</li>
-</ul>
-<p><em>Distrbuted system is sometimes called middleware</em></p>
-<h3 id="GOALS"><a href="#GOALS" class="headerlink" title="GOALS"></a>GOALS</h3><h5 id="Making-Resource-Accessible"><a href="#Making-Resource-Accessible" class="headerlink" title="Making Resource Accessible"></a>Making Resource Accessible</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;The main goal of a distributed system is to make it easy for the users to access remote resources,and to share them in a controlled and efficient way.</p>
-<h5 id="Distrbuted-Transparency"><a href="#Distrbuted-Transparency" class="headerlink" title="Distrbuted Transparency"></a>Distrbuted Transparency</h5><ul>
-<li>Access Transparency</li>
-<li>Location Transparency</li>
-<li>Migration Transparency</li>
-<li>Relocation Transparency</li>
-<li>Replication Transparency</li>
-<li>Concurrency Transparency</li>
-<li>Failure Transparency</li>
-</ul>
-<h5 id="Openness"><a href="#Openness" class="headerlink" title="Openness"></a>Openness</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;Another important goal of distributed systems is openness. An open distributed system is a system that offers services according to standard rules that describe the syntax and semantics of those services.</p>
-<h5 id="Scalability"><a href="#Scalability" class="headerlink" title="Scalability"></a>Scalability</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;Scalability of a system can be measured along at least three different dimensions (Neuman, 1994). First, a system can be scalable with respect to its size,meaning that we can easily add more users and resources to the system. Second, a geographically scalable system is one in which the users and resources may lie far apart. Third, a system can be administratively scalable,/~~aning that it can still be easy to manage even if it spans many independent administrative organizations.<br><em>There are now basically only three techniques for scaling : hiding communication latencies,distribution,and replication</em></p>
-<h3 id="TYPES-OF-DISTRIBUTED-SYSTEM"><a href="#TYPES-OF-DISTRIBUTED-SYSTEM" class="headerlink" title="TYPES OF DISTRIBUTED SYSTEM"></a>TYPES OF DISTRIBUTED SYSTEM</h3><h5 id="Distributed-Computing-Systems"><a href="#Distributed-Computing-Systems" class="headerlink" title="Distributed Computing Systems"></a>Distributed Computing Systems</h5><ul>
-<li>Cluster Computing Systems</li>
-<li>Grid Computing Systems</li>
-</ul>
-<h5 id="Distributed-Information-Systems"><a href="#Distributed-Information-Systems" class="headerlink" title="Distributed Information Systems"></a>Distributed Information Systems</h5><ul>
-<li>Transaction Processing Systems</li>
-<li>Enterprise Application Intergration</li>
-</ul>
-
         
     
 
-    
-</div>
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2018/01/19/Intel-CPU-漏洞分析/">Intel CPU 漏洞分析</a></p>
+    </div>
 
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-    <!-- 使用 DISQUS -->
-<div id="disqus-comment">
-    <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://www.0xkernel.com/2017/10/09/Distributed System-Intruduction/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-</script>
-<script type="text/ls-javascript" id="disqus-thread-script">
-    queue.offer(function() {
-            (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document;
-                var s = d.createElement('script');
-                s.src = '//0xkernel.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', + new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        });
-</script>
-
-</div>
-<style>
-    #disqus-comment{
-        background-color: #eee;
-        padding: 2pc;
-    }
-</style>
-
-                
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2018/01/19/Intel-CPU-漏洞分析/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/myAvatar.jpg" width="44px" height="44px" alt="0xkernel's avatar">
             </div>
+            <div>
+                <strong>0xkernel</strong>
+                <span>1月 19, 2018</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
 
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
+            
 
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
+            
 
-    <!-- Next Nav -->
-    
-        <a href="/2017/09/29/风际游戏-服务端开发面试/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
         </div>
     </div>
+</div>
 
+            
+            
+        
+    
+
+    
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
 
 
                     
@@ -663,7 +461,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -681,7 +479,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/面试/">面试<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Distributed-System/">Distributed System<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux-kernel/">Linux kernel<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试/">面试<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -715,7 +513,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">2</span>
+                <span class="sidebar-badge">8</span>
             </a>
         </li>
         
@@ -772,14 +570,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 
                     
 
